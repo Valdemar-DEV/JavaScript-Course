@@ -28,21 +28,6 @@ for (let i = 0; i < 2; i++) {
         
 }
 
-appData.moneyPorDay = appData.budget / 30;
-
-alert('Ежедневный бюджет : ' + appData.moneyPorDay);
-
-if (appData.moneyPorDay < 100) {
-    console.log('Минимальный уровень достатка');
-} else if (appData.moneyPorDay > 100 && appData.moneyPorDay < 2000 ) {
-    console.log('Средний уровень достатка');
-} else if (appData.moneyPorDay > 2000) {
-    console.log('Высокий оровень достатка');
-} else {
-    console.log('Произошла ошибка');
-}
-
-
 // Используем цикл while
 // let i = 0;
 // while(i < 2) {
@@ -78,6 +63,22 @@ if (appData.moneyPorDay < 100) {
 //         i++;
 // }
 // while (i < 2);
+
+
+appData.moneyPorDay = appData.budget / 30;
+
+alert('Ежедневный бюджет : ' + appData.moneyPorDay);
+
+if (appData.moneyPorDay < 100) {
+    console.log('Минимальный уровень достатка');
+} else if (appData.moneyPorDay > 100 && appData.moneyPorDay < 2000 ) {
+    console.log('Средний уровень достатка');
+} else if (appData.moneyPorDay > 2000) {
+    console.log('Высокий оровень достатка');
+} else {
+    console.log('Произошла ошибка');
+}
+
 
 
 
