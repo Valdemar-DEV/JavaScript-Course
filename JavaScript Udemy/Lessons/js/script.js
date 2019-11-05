@@ -2,7 +2,7 @@ let money = prompt('Ваш бюджет на месяц?'),
     time = prompt('Введите дату в формате YYYY-MM-DD');
 
 let appData = {
-    'бюджет' : money,
+    budget : money,
     timeData : time,
     expenses: {
         moneyForMonth: prompt("Введите обязательную статью расходов в этом месяце"),
@@ -12,7 +12,7 @@ let appData = {
     savings: false
 };
 
-alert(money);
+alert(appData.budget / 30);
 
 /*Вопросы к этому заданию:
 Сколько типов данных существует в JS?
