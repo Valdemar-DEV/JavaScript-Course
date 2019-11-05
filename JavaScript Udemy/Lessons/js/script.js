@@ -1,4 +1,4 @@
-let money = prompt("Ваш бюджет на месяц?", ''),
+let money = +prompt("Ваш бюджет на месяц?", ''),
 	time = prompt('Введите дату в формате YYYY-MM-DD', '');
 
 let appData = {
@@ -10,26 +10,79 @@ let appData = {
 	savings: false
 };
 
-let a1 = prompt("Введите обязательную статью расходов в этом месяце", ''),
-	a2 = prompt("Во сколько обойдется?", ''),
-	a3 = prompt("Введите обязательную статью расходов в этом месяце", ''),
-	a4 = prompt("Во сколько обойдется?", '');
 
-appData.expenses.a1 = a2;
-appData.expenses.a3 = a4;
 
-console.log(appData.expenses.a1);
-console.log(appData.expenses.a3);
-alert(appData.budget / 30);
 
-/*Вопросы к этому заданию:
-Сколько типов данных существует в JS?
-ответ - 7
+for (let i = 0; i < 2; i++) {
+    let a = prompt("Введите обязательную статью расходов в этом месяце", ''),
+        b = prompt("Во сколько обойдется?", '');
+        
+    if ((typeof(a)) === 'string' && ((typeof(a)) != null) && ((typeof(b)) != null) && a != "" && b != "" && a.length < 50)  {
+            console.log('done');
 
-Как вывести информацию в консоль?
-ответ - через команду console.log();
+        appData.expenses[a] = b; 
+    } else {
+        console.log ("bad result");
+        i--;
+    }
+        
+}
 
-Какая функция операторов || и &&?
-ответ - || вернет true если хоть одно из значений верно
-        && вернет true если оба значение верны.
-*/
+appData.moneyPorDay = appData.budget / 30;
+
+alert('Ежедневный бюджет : ' + appData.moneyPorDay);
+
+if (appData.moneyPorDay < 100) {
+    console.log('Минимальный уровень достатка');
+} else if (appData.moneyPorDay > 100 && appData.moneyPorDay < 2000 ) {
+    console.log('Средний уровень достатка');
+} else if (appData.moneyPorDay > 2000) {
+    console.log('Высокий оровень достатка');
+} else {
+    console.log('Произошла ошибка');
+}
+
+
+// Используем цикл while
+// let i = 0;
+// while(i < 2) {
+//     let a = prompt("Введите обязательную статью расходов в этом месяце", ''),
+//         b = prompt("Во сколько обойдется?", '');
+//     if ((typeof(a)) === 'string' && ((typeof(a)) != null) && ((typeof(b)) != null) && a != "" && b != "" && a.length < 50)  {
+//             console.log('done');
+
+//         appData.expenses[a] = b;
+//         console.log(appData.expenses[a]);
+//     } else {
+//         console.log ("bad result");
+//         i--;
+//     }
+//     i++;
+// }
+
+
+// Используем цикл DO...WHILE
+// let i = 0;
+// do {
+//     let a = prompt("Введите обязательную статью расходов в этом месяце", ''),
+//             b = prompt("Во сколько обойдется?", '');
+//         if ((typeof(a)) === 'string' && ((typeof(a)) != null) && ((typeof(b)) != null) && a != "" && b != "" && a.length < 50)  {
+//                 console.log('done');
+    
+//             appData.expenses[a] = b;
+//             console.log(appData.expenses[a]);
+//         } else {
+//             console.log ("bad result");
+//             i--;
+//         }
+//         i++;
+// }
+// while (i < 2);
+
+
+
+// Существует 3 вида циклов:
+// for
+// while
+// do while
+
